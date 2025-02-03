@@ -10,6 +10,8 @@ def largest_element(arr):
             
     return max
 
-user_input = list(map(int, input().split()))
-
-print(largest_element(user_input))
+try:
+    user_input = list(map(int, input().split()))
+    print(largest_element(user_input))
+except Exception as e:
+    print("Try to provide valid inputs")
