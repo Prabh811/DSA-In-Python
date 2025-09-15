@@ -1,14 +1,14 @@
-def remove_duplicates(arr):
-    
-    res = 1
-    
-    for i in range(len(arr)):
-        if arr[i] != arr[res - 1]:
-            arr[res] = arr[i]
-            res += 1
-    return res
-    
-arr = [10, 20, 20, 30, 30, 30, 30]
-res = remove_duplicates(arr)
+def remove_duplicate(arr, length):
+    if len(arr) <= 0:
+        return None
+    size = 0
+    for i in range(1, length):
+        if arr[size] != arr[i]:
+            size += 1
+            arr[size] = arr[i]
+    return arr, size + 1
 
-print(list(arr[i] for i in range(res))) # [10, 20, 30]
+
+# 10 20 20 30 30 30
+arr = list(map(int, input().split()))
+print(remove_duplicate(arr, len(arr)))
